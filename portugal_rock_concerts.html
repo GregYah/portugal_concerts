@@ -1,0 +1,1169 @@
+<title>1980s Portugal Rock Concerts</title>
+<style>
+    /* Blogger template overrides */
+    #primarybwrap { width: 100%; max-width: 1150px; }
+    #secondarybwrap, #comments { display: none; }      
+    
+    /* Global Base Settings (No Tailwind Needed) */
+    .concert-wrapper { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 14px; 
+        color: #f4f4f5; 
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        box-sizing: border-box;
+    }
+    .concert-wrapper *, .concert-wrapper *:before, .concert-wrapper *:after {
+        box-sizing: inherit;
+    }
+
+    /* Core Layout Grid */
+    .concert-layout { 
+        display: grid; 
+        grid-template-columns: 1fr; 
+        gap: 22px; 
+        align-items: start; 
+    }
+    @media (min-width: 1024px) { 
+        .concert-layout { grid-template-columns: 1fr 2fr; } 
+    }
+    
+    /* Layout Helpers */
+    .flex { display: flex; }
+    .flex-1 { flex: 1 1 auto; }
+    .gap-2 { gap: 8px; }
+    .gap-6 { gap: 24px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-6 { margin-bottom: 24px; }
+    .sticky-top { position: sticky; top: 32px; }
+    .hidden { display: none !important; }
+    .cursor-pointer { cursor: pointer; }
+    .items-center { align-items: center; }
+
+    /* Structural Panels */
+    .card-dark { background: #18181b; border: 1px solid #27272a; border-radius: 12px; padding: 24px; }
+    .table-card { background: #18181b; border: 1px solid #27272a; border-radius: 12px; overflow: hidden; }
+    
+    /* Scrollbars */
+    .custom-scrollbar { overflow-x: auto; max-height: 860px; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 10px; }
+    
+    /* Forms & Inputs */
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 500; color: #a1a1aa; margin-bottom: 6px; }
+    .input-dark { width: 100%; padding: 10px 12px; background: #27272a; border: 1px solid #3f3f46; color: #fff; border-radius: 8px; outline: none; transition: border-color 0.2s; font-size: 14px; }
+    .input-dark:focus { border-color: #3b82f6; }
+    textarea.input-dark { resize: vertical; min-height: 80px; }
+    .w-auto { width: auto; }
+
+    /* Interactive Color Tokens */
+    .text-emerald { color: #34d399; font-size: 14px; }
+    .text-blue-link { color: #60a5fa; font-size: 13px; text-decoration: none; background: none; border: none; cursor: pointer; }
+    .text-blue-link:hover { text-decoration: underline; }
+    .text-amber-link { color: #fbbf24; font-size: 13px; text-decoration: none; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+    .text-amber-link:hover { text-decoration: underline; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; font-weight: 600; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; font-size: 14px; transition: background-color 0.2s; width: 100%; white-space: nowrap; }
+    .btn-blue { background: #2563eb; color: white; }
+    .btn-blue:hover { background: #1d4ed8; }
+    .btn-zinc { background: #3f3f46; color: white; }
+    .btn-zinc:hover { background: #52525b; }
+    .btn-red { background: #451a03; color: #f87171; border: 1px solid #7c2d12; }
+    .btn-red:hover { background: #7c2d12; }
+    
+    /* Navigation Tabs */
+    .tab-bar { display: flex; border-b: 1px solid #27272a; gap: 24px; margin-bottom: 24px; border-bottom: 1px solid #27272a; }
+    .tab-btn { padding-bottom: 10px; font-size: 14px; color: #71717a; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; }
+    .tab-btn.active { border-bottom: 2px solid #3b82f6; color: #3b82f6; font-weight: 600; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    
+    /* Fixed Table System */
+    .table-dark { width: 100%; text-align: left; border-collapse: collapse; table-layout: fixed; }
+    .table-dark th { background: #27272a; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #a1a1aa; padding: 12px 24px; position: sticky; top: 0; white-space: nowrap; }
+    .table-dark td { padding: 10px 14px; border-bottom: 1px solid #27272a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .table-dark tbody tr { transition: background-color 0.2s; }
+    .table-dark tbody tr:hover { background-color: rgba(255, 255, 255, 0.04); }
+    .row-clickable { cursor: pointer; }
+
+    /* Sortable headers */
+    .th-sortable { cursor: pointer; user-select: none; }
+    .th-sortable:hover { color: #e4e4e7; }
+    .sort-arrow { display: inline-block; margin-left: 4px; opacity: 0.6; font-size: 11px; }
+
+    /* Clickable artist/venue links within concert rows */
+    .link-cell { color: #60a5fa; text-decoration: none; cursor: pointer; }
+    .link-cell:hover { text-decoration: underline; }
+
+    /* Ticket badge column */
+    .ticket-col { text-align: center; }
+
+    /* Filter banner */
+    .filter-banner { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; margin-bottom: 12px; font-size: 14px; color: #93c5fd; }
+    .filter-banner button { background: none; border: none; color: #93c5fd; cursor: pointer; font-size: 13px; text-decoration: underline; }
+
+    /* Dynamic Messaging */
+    .status-banner { padding: 12px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; margin-bottom: 16px; }
+    .status-error { background: #451a03; color: #f87171; border: 1px solid #7c2d12; }
+    .status-success { background: #064e3b; color: #34d399; border: 1px solid #065f46; }
+</style>
+
+<div class="concert-wrapper">
+    <div class="concert-layout">
+
+        <div class="card-dark sticky-top">
+            <h2 class="mb-6" id="formTitle" style="font-size: 1.25rem; margin-top: 0px;">🎸 Add a Concert</h2>
+            <form id="concertForm">
+                <input id="concertId" type="hidden" />
+
+                <div class="form-group">
+                    <label>Date</label>
+                    <input class="input-dark" id="date" type="date" />
+                </div>
+
+                <div class="form-group">
+                    <label>Artist</label>
+                    <select class="input-dark" id="artistId">
+                        <option value="">-- Select artist --</option>
+                    </select>
+                    <div class="mt-2 flex gap-2 text-emerald">
+                        <input id="isNewArtist" onchange="toggleNew('newArtistFields', 'isNewArtist')" type="checkbox" />
+                        <span class="cursor-pointer" onclick="document.getElementById('isNewArtist').click()">+ Add new artist</span>
+                    </div>
+                    <div class="hidden mt-3 card-dark" id="newArtistFields" style="display: flex; flex-direction: column; gap: 8px; padding: 12px;">
+                        <input class="input-dark" id="newArtistName" type="text" placeholder="Artist name" />
+                        
+                        <select class="input-dark" id="newArtistCountry">
+                            <option value="">-- Select Country --</option>
+                        </select>
+                        <input class="input-dark" id="newArtistCountryOther" type="text" placeholder="Or type a country not listed above" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Venue</label>
+                    <select class="input-dark" id="venueId">
+                        <option value="">-- Select venue --</option>
+                    </select>
+                    <div class="mt-2 flex gap-2 text-emerald">
+                        <input id="isNewVenue" onchange="toggleNew('newVenueFields', 'isNewVenue')" type="checkbox" />
+                        <span class="cursor-pointer" onclick="document.getElementById('isNewVenue').click()">+ Add new venue</span>
+                    </div>
+                    <div class="hidden mt-3 card-dark" id="newVenueFields" style="display: flex; flex-direction: column; gap: 8px; padding: 12px;">
+                        <input class="input-dark" id="newVenueName" type="text" placeholder="Venue name" />
+                        <input class="input-dark" id="newVenueCity" type="text" placeholder="City" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <div class="flex gap-2">
+                        <input class="input-dark" id="price" type="number" />
+                        <select class="input-dark w-auto" id="currency">
+                            <option>Escudos</option><option>Euros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Price tiers <span style="font-size: 12px; color: #71717a; font-weight: 400;">(optional, for multi-zone venues)</span></label>
+                    <div id="priceTiersContainer" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px;"></div>
+                    <button class="btn btn-zinc" type="button" onclick="addPriceTierRow()" style="font-size: 13px; padding: 7px 12px; width: auto;">+ Add tier</button>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Tour Name</label>
+                    <input class="input-dark" id="tour" type="text" />
+                </div>
+                
+                <div class="form-group">
+                    <label>Notes</label>
+                    <textarea class="input-dark" id="notes"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Promoter</label>
+                    <select class="input-dark" id="promoterId">
+                        <option value="">-- Select promoter --</option>
+                    </select>
+                    <div class="mt-2 flex gap-2 text-emerald">
+                        <input id="isNewPromoter" onchange="toggleNew('newPromoterFields', 'isNewPromoter')" type="checkbox" />
+                        <span class="cursor-pointer" onclick="document.getElementById('isNewPromoter').click()">+ Add new promoter</span>
+                    </div>
+                    <div class="hidden mt-3 card-dark" id="newPromoterFields" style="display: flex; flex-direction: column; gap: 8px; padding: 12px;">
+                        <input class="input-dark" id="newPromoterName" type="text" placeholder="Promoter name" />
+                    </div>
+                </div>
+
+                <div class="form-group flex gap-2 items-center" style="margin-bottom: 24px;">
+                    <input id="hasTicket" type="checkbox" style="width: 16px; height: 16px;" />
+                    <label style="margin-bottom: 0;" for="hasTicket">🎫 Have ticket or copy</label>
+                </div>
+
+                <div class="form-group flex gap-2 items-center" style="margin-bottom: 24px;">
+                    <input id="hasReview" type="checkbox" style="width: 16px; height: 16px;" />
+                    <label style="margin-bottom: 0;" for="hasReview">📰 Have review or ad</label>
+                </div>
+
+                <button class="btn btn-blue" id="submitBtn" onclick="submitConcertForm('save')" type="button">
+                    Save to Database
+                </button>
+                <div class="flex gap-2 mt-3">
+                    <button class="hidden btn btn-zinc" id="cancelEdit" onclick="resetConcertForm()" type="button">Cancel</button>
+                    <button class="hidden btn btn-red" id="deleteBtn" onclick="submitConcertForm('delete')" type="button">Delete</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="space-y-6">
+
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('concerts', event)">📋 Concerts</button>
+                <button class="tab-btn" onclick="switchTab('artists', event)">🎤 Artists</button>
+                <button class="tab-btn" onclick="switchTab('venues', event)">🏟️ Venues</button>
+                <button class="tab-btn" onclick="switchTab('promoters', event)">🎪 Promoters</button>
+            </div>
+
+            <div class="hidden status-banner" id="statusMsg"></div>
+
+            <div class="tab-panel active table-card" id="tab-concerts">
+                <div style="padding: 16px 16px 0 16px;">
+                    <div class="flex gap-2 mb-3" style="align-items: stretch;">
+                        <input class="input-dark" id="concertSearch" type="text" placeholder="🔎 Search artist, venue, tour, or year..." oninput="renderConcertsTable()" />
+                        <button class="btn btn-zinc w-auto" style="white-space: nowrap;" onclick="openExportPanel()">⬇ Export CSV</button>
+                    </div>
+                    <div class="hidden filter-banner" id="filterBanner">
+                        <span id="filterBannerText"></span>
+                        <button onclick="clearFilter()">Clear filter ✕</button>
+                    </div>
+                    <div class="hidden card-dark mb-3" id="exportPanel" style="padding: 16px;">
+                        <p class="mb-3" style="margin-top: 0; font-size: 14px; color: #d4d4d8;">Export which concerts?</p>
+                        <div class="flex gap-2" style="flex-wrap: wrap;">
+                            <button class="btn btn-blue flex-1" style="white-space: nowrap; min-width: 140px;" onclick="exportConcertsCsv('visible')">Visible (<span id="exportVisibleCount">0</span>)</button>
+                            <button class="btn btn-blue flex-1" style="white-space: nowrap; min-width: 110px;" onclick="exportConcertsCsv('all')">All concerts</button>
+                            <button class="btn btn-zinc w-auto" style="white-space: nowrap;" onclick="closeExportPanel()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-scrollbar">
+                    <table class="table-dark">
+                        <colgroup>
+                            <col style="width: 20%;"></col>
+                            <col style="width: 33%;"></col>
+                            <col style="width: 33%;"></col>
+                            <col style="width: 14%;"></col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="th-sortable" data-sort="date" onclick="sortConcertsBy('date')">Date<span class="sort-arrow" id="arrow-date"></span></th>
+                                <th class="th-sortable" data-sort="artist" onclick="sortConcertsBy('artist')">Artist<span class="sort-arrow" id="arrow-artist"></span></th>
+                                <th class="th-sortable" data-sort="venue" onclick="sortConcertsBy('venue')">Venue<span class="sort-arrow" id="arrow-venue"></span></th>
+                                <th class="ticket-col">🎫</th>
+                            </tr>
+                        </thead>
+                        <tbody id="viewerBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-artists">
+                <div class="hidden card-dark mb-4" id="artistEditPanel">
+                    <h3 class="mb-3" style="margin-top: 0px;">✏️ Edit Artist</h3>
+                    <input id="editArtistId" type="hidden" />
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <input class="input-dark" id="editArtistName" type="text" />
+                        
+                        <select class="input-dark" id="editArtistCountry">
+                            <option value="">-- Select Country --</option>
+                        </select>
+                        <input class="input-dark" id="editArtistCountryOther" type="text" placeholder="Or type a country not listed above" />
+                    </div>
+                    <div class="flex gap-2 mt-3">
+                        <button class="btn btn-blue flex-1" onclick="saveArtist()">Save Artist</button>
+                        <button class="btn btn-red flex-1" onclick="deleteArtist()">Delete</button>
+                        <button class="btn btn-zinc w-auto" onclick="closeArtistEdit()">Cancel</button>
+                    </div>
+                </div>
+                
+                <div class="table-card">
+                    <div class="custom-scrollbar" style="max-height: 780px;">
+                        <table class="table-dark">
+                            <colgroup>
+                                <col style="width: 55%;"></col>
+                                <col style="width: 25%;"></col>
+                                <col style="width: 20%;"></col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Country</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="artistsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-venues">
+                <div class="hidden card-dark mb-4" id="venueEditPanel">
+                    <h3 class="mb-3" style="margin-top: 0px;">✏️ Edit Venue</h3>
+                    <input id="editVenueId" type="hidden" />
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <input class="input-dark" id="editVenueName" type="text" />
+                        <input class="input-dark" id="editVenueCity" type="text" />
+                    </div>
+                    <div class="flex gap-2 mt-3">
+                        <button class="btn btn-blue flex-1" onclick="saveVenue()">Save Venue</button>
+                        <button class="btn btn-red flex-1" onclick="deleteVenue()">Delete</button>
+                        <button class="btn btn-zinc w-auto" onclick="closeVenueEdit()">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="custom-scrollbar" style="max-height: 780px;">
+                        <table class="table-dark">
+                            <colgroup>
+                                <col style="width: 55%;"></col>
+                                <col style="width: 25%;"></col>
+                                <col style="width: 20%;"></col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>City</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="venuesBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="tab-promoters">
+                <div class="hidden card-dark mb-4" id="promoterEditPanel">
+                    <h3 class="mb-3" style="margin-top: 0px;">✏️ Edit Promoter</h3>
+                    <input id="editPromoterId" type="hidden" />
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <input class="input-dark" id="editPromoterName" type="text" />
+                    </div>
+                    <div class="flex gap-2 mt-3">
+                        <button class="btn btn-blue flex-1" onclick="savePromoter()">Save Promoter</button>
+                        <button class="btn btn-red flex-1" onclick="deletePromoter()">Delete</button>
+                        <button class="btn btn-zinc w-auto" onclick="closePromoterEdit()">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="custom-scrollbar" style="max-height: 780px;">
+                        <table class="table-dark">
+                            <colgroup>
+                                <col style="width: 80%;"></col>
+                                <col style="width: 20%;"></col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="promotersBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbxMIhuMairbXKsG8x-vjXicXss6xMFIvdYpfX39qDxzSFWIgn-jMwbyokBNZIJUK9my/exec";
+
+    let artistMap = {};
+    let venueMap  = {};
+    let promoterMap = {};
+    let allArtists = [];
+    let allVenues  = [];
+    let allPromoters = [];
+    let allConcerts = [];
+
+    let activeFilter = null;
+    let sortField = 'date';      
+    let sortDir   = 'desc';      
+
+    window.onload = () => loadData();
+
+    function switchTab(name, evt) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        if (evt && evt.currentTarget) {
+            evt.currentTarget.classList.add('active');
+        }
+    }
+
+    function toggleNew(fieldId, checkboxId) {
+        const panel = document.getElementById(fieldId);
+        const checkbox = document.getElementById(checkboxId);
+        panel.classList.toggle('hidden', !checkbox.checked);
+    }
+
+    // ── Price tiers ──────────────────────────────────────────────────────
+
+    const TIER_NAMES = ["Plateia", "Balcao", "Galeria", "Other"];
+
+    function addPriceTierRow(name, price, currency) {
+        const container = document.getElementById("priceTiersContainer");
+        const idx = container.children.length;
+        const row = document.createElement("div");
+        row.className = "flex gap-2 items-center";
+        row.style.cssText = "align-items: center;";
+        row.innerHTML = `
+            <select class="input-dark w-auto" id="tierName_${idx}" style="min-width: 100px;">
+                ${TIER_NAMES.map(t => `<option${t === (name || 'Plateia') ? ' selected' : ''}>${t}</option>`).join('')}
+            </select>
+            <input class="input-dark" id="tierPrice_${idx}" type="number" value="${price || ''}" style="min-width: 80px;" />
+            <select class="input-dark w-auto" id="tierCurrency_${idx}">
+                <option${(currency || 'Escudos') === 'Escudos' ? ' selected' : ''}>Escudos</option>
+                <option${currency === 'Euros' ? ' selected' : ''}>Euros</option>
+            </select>
+            <button type="button" onclick="this.parentElement.remove()" style="background:none; border:none; color:#f87171; cursor:pointer; font-size:16px; padding:0 4px; flex-shrink:0;">x</button>`;
+        container.appendChild(row);
+    }
+
+    function getPriceTiersValue() {
+        const container = document.getElementById("priceTiersContainer");
+        const parts = [];
+        Array.from(container.children).forEach((row, idx) => {
+            const name     = document.getElementById(`tierName_${idx}`)?.value || "";
+            const price    = document.getElementById(`tierPrice_${idx}`)?.value || "";
+            const currency = document.getElementById(`tierCurrency_${idx}`)?.value || "";
+            if (price) parts.push(`${name}:${price}:${currency}`);
+        });
+        return parts.join("|");
+    }
+
+    function setPriceTiersValue(encoded) {
+        clearPriceTiers();
+        if (!encoded) return;
+        encoded.split("|").forEach(part => {
+            const [name, price, currency] = part.split(":");
+            if (price) addPriceTierRow(name, price, currency);
+        });
+    }
+
+    function clearPriceTiers() {
+        document.getElementById("priceTiersContainer").innerHTML = "";
+    }
+
+    function loadData() {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => populateApp(data))
+            .catch(err => showStatus("Error loading data: " + err, "error"));
+    }
+
+    function populateApp(data) {
+        artistMap  = {};
+        venueMap   = {};
+        promoterMap = {};
+
+        // Sort alphabetically by name so both the dropdowns in the form and
+        // the Artists/Venues/Promoters tables list things A→Z, regardless of
+        // the order rows happen to be in on the sheet.
+        const byName = (a, b) => (a[1] || "").toString().toLowerCase().localeCompare((b[1] || "").toString().toLowerCase());
+
+        allArtists   = (data.artists   || []).slice().sort(byName);
+        allVenues    = (data.venues    || []).slice().sort(byName);
+        allPromoters = (data.promoters || []).slice().sort(byName);
+        allConcerts  = data.concerts || [];
+
+        const artistSelect   = document.getElementById("artistId");
+        const venueSelect    = document.getElementById("venueId");
+        const promoterSelect = document.getElementById("promoterId");
+        artistSelect.innerHTML   = '<option value="">-- Select artist --</option>';
+        venueSelect.innerHTML    = '<option value="">-- Select venue --</option>';
+        promoterSelect.innerHTML = '<option value="">-- Select promoter --</option>';
+
+        allArtists.forEach(row => {
+            artistMap[row[0]] = row[1];
+            artistSelect.innerHTML += `<option value="${row[0]}">${escapeHtml(row[1])}</option>`;
+        });
+        allVenues.forEach(row => {
+            venueMap[row[0]] = row[1];
+            venueSelect.innerHTML += `<option value="${row[0]}">${escapeHtml(row[1])}</option>`;
+        });
+        allPromoters.forEach(row => {
+            promoterMap[row[0]] = row[1];
+            promoterSelect.innerHTML += `<option value="${row[0]}">${escapeHtml(row[1])}</option>`;
+        });
+
+        // Country dropdowns: derived from countries already used by existing
+        // artists (column 2), deduplicated and sorted A-Z. There's no separate
+        // Countries sheet -- country is just text stored on each artist -- so
+        // this list grows naturally as people use the free-text override.
+        const countries = Array.from(new Set(
+            allArtists.map(row => (row[2] || "").toString().trim()).filter(c => c)
+        )).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+        const countryOptionsHtml = '<option value="">-- Select Country --</option>' +
+            countries.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+
+        const newCountrySelect  = document.getElementById("newArtistCountry");
+        const editCountrySelect = document.getElementById("editArtistCountry");
+        if (newCountrySelect)  newCountrySelect.innerHTML  = countryOptionsHtml;
+        if (editCountrySelect) editCountrySelect.innerHTML = countryOptionsHtml;
+
+        renderConcertsTable();
+        renderArtistsTable();
+        renderVenuesTable();
+        renderPromotersTable();
+    }
+
+    function escapeHtml(str) {
+        return String(str ?? "").replace(/[&<>"']/g, c => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[c]));
+    }
+
+    function getVisibleConcerts() {
+        let rows = allConcerts.slice();
+
+        if (activeFilter) {
+            const colIndexMap = { artist: 2, venue: 3, promoter: 8 };
+            const colIndex = colIndexMap[activeFilter.type];
+            rows = rows.filter(row => String(row[colIndex]) === String(activeFilter.id));
+        }
+
+        const searchBox = document.getElementById("concertSearch");
+        const query = searchBox ? searchBox.value.trim().toLowerCase() : "";
+        if (query) {
+            rows = rows.filter(row => {
+                const artistName = (artistMap[row[2]] || row[2] || "").toString().toLowerCase();
+                const venueName  = (venueMap[row[3]] || row[3] || "").toString().toLowerCase();
+                const tourName   = (row[6] || "").toString().toLowerCase();
+                const dateStr    = (row[1] ? String(row[1]).split('T')[0] : "").toLowerCase();
+                return artistName.includes(query) || venueName.includes(query) ||
+                       tourName.includes(query) || dateStr.includes(query);
+            });
+        }
+
+        rows.sort((a, b) => {
+            let valA, valB;
+            if (sortField === 'date') {
+                valA = a[1] ? String(a[1]) : "";
+                valB = b[1] ? String(b[1]) : "";
+            } else if (sortField === 'artist') {
+                valA = (artistMap[a[2]] || a[2] || "").toString().toLowerCase();
+                valB = (artistMap[b[2]] || b[2] || "").toString().toLowerCase();
+            } else { 
+                valA = (venueMap[a[3]] || a[3] || "").toString().toLowerCase();
+                valB = (venueMap[b[3]] || b[3] || "").toString().toLowerCase();
+            }
+            if (valA < valB) return sortDir === 'asc' ? -1 : 1;
+            if (valA > valB) return sortDir === 'asc' ? 1 : -1;
+            return 0;
+        });
+
+        return rows;
+    }
+
+    function sortConcertsBy(field) {
+        if (sortField === field) {
+            sortDir = (sortDir === 'asc') ? 'desc' : 'asc';
+        } else {
+            sortField = field;
+            sortDir = 'asc';
+        }
+        renderConcertsTable();
+    }
+
+    function updateSortArrows() {
+        ['date', 'artist', 'venue'].forEach(f => {
+            const el = document.getElementById('arrow-' + f);
+            if (!el) return;
+            if (f === sortField) {
+                el.textContent = sortDir === 'asc' ? '^' : 'v';
+            } else {
+                el.textContent = '';
+            }
+        });
+    }
+
+    function renderConcertsTable() {
+        updateSortArrows();
+        renderFilterBanner();
+        updateExportVisibleCount();
+
+        const viewerBody = document.getElementById("viewerBody");
+        viewerBody.innerHTML = "";
+
+        const rows = getVisibleConcerts();
+
+        if (rows.length === 0) {
+            const searchBox = document.getElementById("concertSearch");
+            const hasQuery = searchBox && searchBox.value.trim();
+            let msg = "No concerts yet.";
+            if (activeFilter && hasQuery) msg = "No concerts match this filter and search.";
+            else if (activeFilter) msg = "No concerts match this filter.";
+            else if (hasQuery) msg = "No concerts match your search.";
+            viewerBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #71717a; padding: 32px;">${msg}</td></tr>`;
+            return;
+        }
+
+        // Year-group headers only make sense when the list is actually sorted
+        // by date — grouping while sorted by artist/venue name would scatter
+        // years out of order and look broken.
+        const groupByYear = (sortField === 'date');
+        let lastYear = null;
+
+        rows.forEach(row => {
+            if (groupByYear) {
+                const yearStr = row[1] ? String(row[1]).split('T')[0].split('-')[0] : 'Unknown';
+                if (yearStr !== lastYear) {
+                    lastYear = yearStr;
+                    const yearRow = document.createElement("tr");
+                    yearRow.innerHTML = `<td colspan="4" style="background:#1f2937; color:#93c5fd; font-weight:600; font-size:12px; letter-spacing:0.05em; padding:8px 24px; cursor:default;">-- ${escapeHtml(yearStr)} --</td>`;
+                    viewerBody.appendChild(yearRow);
+                }
+            }
+
+            const tr = document.createElement("tr");
+            tr.className = "row-clickable";
+            tr.onclick = (evt) => {
+                if (evt.target.classList.contains('link-cell')) return;
+                loadConcertForEdit(row);
+            };
+
+            const artistName = artistMap[row[2]] || row[2] || '';
+            const venueName  = venueMap[row[3]] || row[3] || '';
+            const hasTicket  = String(row[9]).toUpperCase() === "TRUE";
+
+            tr.innerHTML = `
+                <td style="font-weight: 500; color: #fff;">${row[1] ? String(row[1]).split('T')[0] : 'N/A'}</td>
+                <td><span class="link-cell" onclick="filterByArtist('${row[2]}', \`${escapeHtml(artistName).replace(/`/g, "'")}\`)">${escapeHtml(artistName)}</span></td>
+                <td><span class="link-cell" onclick="filterByVenue('${row[3]}', \`${escapeHtml(venueName).replace(/`/g, "'")}\`)">${escapeHtml(venueName)}</span></td>
+                <td class="ticket-col">${hasTicket ? '🎫' : ''}</td>`;
+            viewerBody.appendChild(tr);
+        });
+    }
+
+    function filterByArtist(id, name) {
+        activeFilter = { type: 'artist', id: id, name: name };
+        switchTab('concerts');
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        renderConcertsTable();
+    }
+
+    function filterByVenue(id, name) {
+        activeFilter = { type: 'venue', id: id, name: name };
+        switchTab('concerts');
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        renderConcertsTable();
+    }
+
+    function clearFilter() {
+        activeFilter = null;
+        renderConcertsTable();
+    }
+
+    function renderFilterBanner() {
+        const banner = document.getElementById("filterBanner");
+        const text   = document.getElementById("filterBannerText");
+        if (activeFilter) {
+            const labelMap = { artist: 'Artist', venue: 'Venue', promoter: 'Promoter' };
+            const label = labelMap[activeFilter.type] || 'Filter';
+            text.textContent = `Showing concerts for ${label}: ${activeFilter.name}`;
+            banner.classList.remove("hidden");
+        } else {
+            banner.classList.add("hidden");
+        }
+    }
+
+    // ── CSV export ────────────────────────────────────────────────────
+
+    function openExportPanel() {
+        updateExportVisibleCount();
+        document.getElementById("exportPanel").classList.remove("hidden");
+    }
+
+    function closeExportPanel() {
+        document.getElementById("exportPanel").classList.add("hidden");
+    }
+
+    function updateExportVisibleCount() {
+        const el = document.getElementById("exportVisibleCount");
+        if (el) el.textContent = getVisibleConcerts().length;
+    }
+
+    function csvEscape(value) {
+        const str = String(value ?? "");
+        if (/[",\n]/.test(str)) {
+            return '"' + str.replace(/"/g, '""') + '"';
+        }
+        return str;
+    }
+
+    function exportConcertsCsv(scope) {
+        const rows = (scope === 'all') ? allConcerts.slice() : getVisibleConcerts();
+
+        const headers = ["Date", "Artist", "Venue", "Price", "Currency", "Tour", "Notes", "Promoter", "Has Ticket"];
+        const lines = [headers.map(csvEscape).join(",")];
+
+        rows.forEach(row => {
+            const artistName   = artistMap[row[2]] || row[2] || "";
+            const venueName    = venueMap[row[3]] || row[3] || "";
+            const promoterName = promoterMap[row[8]] || row[8] || "";
+            const dateStr      = row[1] ? String(row[1]).split('T')[0] : "";
+            const hasTicket    = String(row[9]).toUpperCase() === "TRUE" ? "Yes" : "No";
+
+            lines.push([
+                dateStr, artistName, venueName, row[4] || "", row[5] || "",
+                row[6] || "", row[7] || "", promoterName, hasTicket
+            ].map(csvEscape).join(","));
+        });
+
+        const csvContent = lines.join("\r\n");
+        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+        const url  = URL.createObjectURL(blob);
+        const a    = document.createElement("a");
+        const dateTag = new Date().toISOString().split('T')[0];
+        a.href = url;
+        a.download = `concerts-export-${scope}-${dateTag}.csv`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        closeExportPanel();
+    }
+
+    function renderArtistsTable() {
+        const tbody = document.getElementById("artistsBody");
+        tbody.innerHTML = "";
+        if (allArtists.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #71717a; padding: 32px;">No artists yet.</td></tr>`;
+            return;
+        }
+        const sortedArtists = allArtists.slice().sort((a, b) =>
+            (a[1] || "").toString().toLowerCase().localeCompare((b[1] || "").toString().toLowerCase())
+        );
+        sortedArtists.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>
+                    <button onclick="filterByArtist('${row[0]}', \`${escapeHtml(row[1] || '').replace(/`/g,"'")}\`)" class="text-amber-link" style="font-weight: 500; font-size: 14px;">
+                        ${escapeHtml(row[1])}
+                    </button>
+                </td>
+                <td style="color: #a1a1aa;">${escapeHtml(row[2]) || ''}</td>
+                <td>
+                    <button onclick="openArtistEdit('${row[0]}', \`${escapeHtml(row[1]||'').replace(/`/g,"'")}\`, \`${escapeHtml(row[2]||'').replace(/`/g,"'")}\`)"
+                        class="text-blue-link">Edit</button>
+                </td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    function openArtistEdit(id, name, country) {
+        document.getElementById("editArtistId").value      = id;
+        document.getElementById("editArtistName").value    = name;
+
+        const countrySelect = document.getElementById("editArtistCountry");
+        const countryOther  = document.getElementById("editArtistCountryOther");
+        const matchesOption = Array.from(countrySelect.options).some(opt => opt.value === country);
+        if (matchesOption) {
+            countrySelect.value = country;
+            countryOther.value  = "";
+        } else {
+            // Country isn't currently in the dropdown (e.g. blank, or typed
+            // in via the override field moments before this list refreshed),
+            // so show it in the override field instead.
+            countrySelect.value = "";
+            countryOther.value  = country || "";
+        }
+
+        document.getElementById("artistEditPanel").classList.remove("hidden");
+        document.getElementById("artistEditPanel").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function closeArtistEdit() {
+        document.getElementById("artistEditPanel").classList.add("hidden");
+    }
+
+    function saveArtist() {
+        const artistId = document.getElementById("editArtistId").value;
+        const newName  = document.getElementById("editArtistName").value;
+        const dupe = findDuplicateName(allArtists, newName, artistId);
+        if (dupe) {
+            showStatus(`Error: An artist named "${dupe[1]}" already exists. Choose a different name, or delete this entry and use the existing one instead.`, "error");
+            return;
+        }
+        const payload = {
+            action:             "updateArtist",
+            artistId:           artistId,
+            artistName:         newName,
+            artistCountry:      document.getElementById("editArtistCountry").value,
+            artistCountryOther: document.getElementById("editArtistCountryOther").value
+        };
+        postData(payload, () => { closeArtistEdit(); loadData(); });
+    }
+
+    function deleteArtist() {
+        if (!confirm("Delete this artist? This does not delete their concerts.")) return;
+        const payload = {
+            action:   "deleteArtist",
+            artistId: document.getElementById("editArtistId").value
+        };
+        postData(payload, () => { closeArtistEdit(); loadData(); });
+    }
+
+    function renderVenuesTable() {
+        const tbody = document.getElementById("venuesBody");
+        tbody.innerHTML = "";
+        if (allVenues.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="3" style="text-align: center; color: #71717a; padding: 32px;">No venues yet.</td></tr>`;
+            return;
+        }
+        const sortedVenues = allVenues.slice().sort((a, b) =>
+            (a[1] || "").toString().toLowerCase().localeCompare((b[1] || "").toString().toLowerCase())
+        );
+        sortedVenues.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>
+                    <button onclick="filterByVenue('${row[0]}', \`${escapeHtml(row[1] || '').replace(/`/g,"'")}\`)" class="text-amber-link" style="font-weight: 500; font-size: 14px;">
+                        ${escapeHtml(row[1])}
+                    </button>
+                </td>
+                <td style="color: #a1a1aa;">${escapeHtml(row[2]) || ''}</td>
+                <td>
+                    <button onclick="openVenueEdit('${row[0]}', \`${escapeHtml(row[1]||'').replace(/`/g,"'")}\`, \`${escapeHtml(row[2]||'').replace(/`/g,"'")}\`)"
+                        class="text-blue-link">Edit</button>
+                </td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    function openVenueEdit(id, name, city) {
+        document.getElementById("editVenueId").value   = id;
+        document.getElementById("editVenueName").value = name;
+        document.getElementById("editVenueCity").value = city;
+        document.getElementById("venueEditPanel").classList.remove("hidden");
+        document.getElementById("venueEditPanel").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function closeVenueEdit() {
+        document.getElementById("venueEditPanel").classList.add("hidden");
+    }
+
+    function saveVenue() {
+        const venueId = document.getElementById("editVenueId").value;
+        const newName = document.getElementById("editVenueName").value;
+        const dupe = findDuplicateName(allVenues, newName, venueId);
+        if (dupe) {
+            showStatus(`Error: A venue named "${dupe[1]}" already exists. Choose a different name, or delete this entry and use the existing one instead.`, "error");
+            return;
+        }
+        const payload = {
+            action:    "updateVenue",
+            venueId:   venueId,
+            venueName: newName,
+            venueCity: document.getElementById("editVenueCity").value
+        };
+        postData(payload, () => { closeVenueEdit(); loadData(); });
+    }
+
+    function deleteVenue() {
+        if (!confirm("Delete this venue? This does not delete concerts held there.")) return;
+        const payload = {
+            action:  "deleteVenue",
+            venueId: document.getElementById("editVenueId").value
+        };
+        postData(payload, () => { closeVenueEdit(); loadData(); });
+    }
+
+    function filterByPromoter(id, name) {
+        activeFilter = { type: 'promoter', id: id, name: name };
+        switchTab('concerts');
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        renderConcertsTable();
+    }
+
+    function renderPromotersTable() {
+        const tbody = document.getElementById("promotersBody");
+        if (!tbody) return;
+        tbody.innerHTML = "";
+        if (allPromoters.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="2" style="text-align: center; color: #71717a; padding: 32px;">No promoters yet.</td></tr>`;
+            return;
+        }
+        allPromoters.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>
+                    <button onclick="filterByPromoter('${row[0]}', \`${escapeHtml(row[1] || '').replace(/`/g,"'")}\`)" class="text-amber-link" style="font-weight: 500; font-size: 14px;">
+                        ${escapeHtml(row[1])}
+                    </button>
+                </td>
+                <td>
+                    <button onclick="openPromoterEdit('${row[0]}', \`${escapeHtml(row[1]||'').replace(/`/g,"'")}\`)"
+                        class="text-blue-link">Edit</button>
+                </td>`;
+            tbody.appendChild(tr);
+        });
+    }
+
+    function openPromoterEdit(id, name) {
+        document.getElementById("editPromoterId").value   = id;
+        document.getElementById("editPromoterName").value = name;
+        document.getElementById("promoterEditPanel").classList.remove("hidden");
+        document.getElementById("promoterEditPanel").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function closePromoterEdit() {
+        document.getElementById("promoterEditPanel").classList.add("hidden");
+    }
+
+    function savePromoter() {
+        const promoterId = document.getElementById("editPromoterId").value;
+        const newName    = document.getElementById("editPromoterName").value;
+        const dupe = findDuplicateName(allPromoters, newName, promoterId);
+        if (dupe) {
+            showStatus(`Error: A promoter named "${dupe[1]}" already exists. Choose a different name, or delete this entry and use the existing one instead.`, "error");
+            return;
+        }
+        const payload = {
+            action:        "updatePromoter",
+            promoterId:    promoterId,
+            promoterName:  newName
+        };
+        postData(payload, () => { closePromoterEdit(); loadData(); });
+    }
+
+    function deletePromoter() {
+        if (!confirm("Delete this promoter? This does not delete their concerts.")) return;
+        const payload = {
+            action:     "deletePromoter",
+            promoterId: document.getElementById("editPromoterId").value
+        };
+        postData(payload, () => { closePromoterEdit(); loadData(); });
+    }
+
+    function loadConcertForEdit(row) {
+        document.getElementById("concertId").value  = row[0];
+        document.getElementById("date").value       = String(row[1]).split('T')[0];
+        document.getElementById("artistId").value   = row[2];
+        document.getElementById("venueId").value    = row[3];
+        document.getElementById("price").value      = row[4];
+        document.getElementById("currency").value   = row[5];
+        document.getElementById("tour").value       = row[6];
+        document.getElementById("notes").value      = row[7];
+        document.getElementById("promoterId").value  = row[8];
+        document.getElementById("hasTicket").checked = String(row[9]).toUpperCase() === "TRUE";
+        setPriceTiersValue(row[10] || "");
+        document.getElementById("hasReview").checked = String(row[11]).toUpperCase() === "TRUE";
+
+        document.getElementById("isNewArtist").checked   = false;
+        document.getElementById("isNewVenue").checked    = false;
+        document.getElementById("isNewPromoter").checked = false;
+        document.getElementById("newArtistFields").classList.add("hidden");
+        document.getElementById("newVenueFields").classList.add("hidden");
+        document.getElementById("newPromoterFields").classList.add("hidden");
+        document.getElementById("newArtistName").value        = "";
+        document.getElementById("newArtistCountry").value     = "";
+        document.getElementById("newArtistCountryOther").value = "";
+        document.getElementById("newVenueName").value          = "";
+        document.getElementById("newVenueCity").value          = "";
+        document.getElementById("newPromoterName").value       = "";
+
+        document.getElementById("formTitle").innerHTML = "✏️ Edit Concert";
+        document.getElementById("submitBtn").innerText = "Update Concert";
+        document.getElementById("cancelEdit").classList.remove("hidden");
+        document.getElementById("deleteBtn").classList.remove("hidden");
+        document.getElementById("concertForm").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function resetConcertForm() {
+        document.getElementById("concertForm").reset();
+        document.getElementById("concertId").value        = "";
+        document.getElementById("isNewArtist").checked    = false;
+        document.getElementById("isNewVenue").checked     = false;
+        document.getElementById("isNewPromoter").checked  = false;
+        document.getElementById("hasTicket").checked      = false;
+        document.getElementById("hasReview").checked      = false;
+        document.getElementById("newArtistFields").classList.add("hidden");
+        document.getElementById("newVenueFields").classList.add("hidden");
+        document.getElementById("newPromoterFields").classList.add("hidden");
+        document.getElementById("newArtistCountryOther").value = "";
+        clearPriceTiers();
+
+        document.getElementById("formTitle").innerHTML    = "🎸 Add a Concert";
+        document.getElementById("submitBtn").innerText    = "Save to Database";
+        document.getElementById("cancelEdit").classList.add("hidden");
+        document.getElementById("deleteBtn").classList.add("hidden");
+    }
+
+    function findDuplicateConcert(artistId, venueId, date) {
+        // Only meaningful when both artist and venue refer to EXISTING entities
+        // (a brand-new artist or venue can't already have a past concert).
+        // Only called for brand-new concerts, so there's no current row to exclude.
+        if (!artistId || !venueId || !date) return null;
+        return allConcerts.find(row => {
+            const rowDate = row[1] ? String(row[1]).split('T')[0] : "";
+            return String(row[2]) === String(artistId) &&
+                   String(row[3]) === String(venueId) &&
+                   rowDate === date;
+        }) || null;
+    }
+
+    // ── Duplicate-name prevention (Artists / Venues / Promoters) ─────────
+
+    function normalizeName(name) {
+        return (name || "")
+            .toString()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents
+            .trim()
+            .replace(/\s+/g, ' ')   // collapse internal double-spaces
+            .toLowerCase();
+    }
+
+    function findDuplicateName(list, name, excludeId) {
+        const target = normalizeName(name);
+        if (!target) return null;
+        return list.find(row =>
+            row[0] !== excludeId && normalizeName(row[1]) === target
+        ) || null;
+    }
+
+    function submitConcertForm(action) {
+        if (action === 'delete' && !confirm("Delete this concert?")) return;
+
+        const concertId      = document.getElementById("concertId").value;
+        const resolvedAction = (action === 'save' && concertId) ? 'update' : action;
+
+        const isNewArtist = document.getElementById("isNewArtist").checked;
+        const isNewVenue  = document.getElementById("isNewVenue").checked;
+        const artistId    = document.getElementById("artistId").value;
+        const venueId     = document.getElementById("venueId").value;
+        const dateValue   = document.getElementById("date").value;
+
+        if (resolvedAction === 'save' && !isNewArtist && !isNewVenue) {
+            const dupe = findDuplicateConcert(artistId, venueId, dateValue);
+            if (dupe) {
+                const artistName = artistMap[dupe[2]] || dupe[2] || 'this artist';
+                const venueName  = venueMap[dupe[3]] || dupe[3] || 'this venue';
+                showStatus(`Error: A concert with ${artistName} at ${venueName} on ${dateValue} already exists. Edit that entry instead, or change the date/venue.`, "error");
+                return;
+            }
+        }
+
+        if (isNewArtist) {
+            const newName = document.getElementById("newArtistName").value;
+            const dupeArtist = findDuplicateName(allArtists, newName);
+            if (dupeArtist) {
+                showStatus(`Error: An artist named "${dupeArtist[1]}" already exists. Select it from the dropdown instead of adding a new one.`, "error");
+                return;
+            }
+        }
+
+        if (isNewVenue) {
+            const newName = document.getElementById("newVenueName").value;
+            const dupeVenue = findDuplicateName(allVenues, newName);
+            if (dupeVenue) {
+                showStatus(`Error: A venue named "${dupeVenue[1]}" already exists. Select it from the dropdown instead of adding a new one.`, "error");
+                return;
+            }
+        }
+
+        const isNewPromoterChecked = document.getElementById("isNewPromoter").checked;
+        if (isNewPromoterChecked) {
+            const newName = document.getElementById("newPromoterName").value;
+            const dupePromoter = findDuplicateName(allPromoters, newName);
+            if (dupePromoter) {
+                showStatus(`Error: A promoter named "${dupePromoter[1]}" already exists. Select it from the dropdown instead of adding a new one.`, "error");
+                return;
+            }
+        }
+
+        const payload = {
+            action:                resolvedAction,
+            concertId:             concertId,
+            date:                  dateValue,
+            artistId:              artistId,
+            venueId:               venueId,
+            promoterId:            document.getElementById("promoterId").value,
+            isNewArtist:           isNewArtist,
+            newArtistName:         document.getElementById("newArtistName").value,
+            newArtistCountry:      document.getElementById("newArtistCountry").value,
+            newArtistCountryOther: document.getElementById("newArtistCountryOther").value,
+            isNewVenue:            isNewVenue,
+            newVenueName:          document.getElementById("newVenueName").value,
+            newVenueCity:          document.getElementById("newVenueCity").value,
+            isNewPromoter:         document.getElementById("isNewPromoter").checked,
+            newPromoterName:       document.getElementById("newPromoterName").value,
+            price:                 document.getElementById("price").value,
+            currency:              document.getElementById("currency").value,
+            priceTiers:            getPriceTiersValue(),
+            tour:                  document.getElementById("tour").value,
+            notes:                 document.getElementById("notes").value,
+            hasTicket:             document.getElementById("hasTicket").checked,
+            hasReview:             document.getElementById("hasReview").checked
+        };
+
+        const btn = document.getElementById("submitBtn");
+        btn.disabled  = true;
+        btn.innerText = "Saving...";
+
+        postData(payload, () => {
+            resetConcertForm();
+            loadData();
+        });
+    }
+
+    function postData(payload, onSuccess) {
+        const btn = document.getElementById("submitBtn");
+
+        fetch(API_URL, {
+            method: "POST",
+            body:   JSON.stringify(payload)
+        })
+        .then(res => res.json())
+        .then(result => {
+            const isError = result.status.toLowerCase().includes("error");
+            showStatus(result.status, isError ? "error" : "success");
+            if (!isError && onSuccess) onSuccess();
+
+            btn.disabled  = false;
+            btn.innerText = "Save to Database";
+        })
+        .catch(err => {
+            showStatus("Network error: " + err, "error");
+            btn.disabled  = false;
+            btn.innerText = "Save to Database";
+        });
+    }
+
+    function showStatus(message, type) {
+        const el = document.getElementById("statusMsg");
+        el.innerText  = message;
+        if (type === "error") {
+            el.className = "status-banner status-error";
+        } else {
+            el.className = "status-banner status-success";
+        }
+        el.classList.remove("hidden");
+        setTimeout(() => el.classList.add("hidden"), 4000);
+    }
+</script>
